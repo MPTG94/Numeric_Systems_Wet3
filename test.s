@@ -3,7 +3,7 @@ main:   # Put your code here
         # Loads the value from memory in 8 bit offset, to register t1
         lw              t1, 8(x0)
         # Perform add i to value loaded from memory, adding 12 and XORing
-        addi            t2, t1, 0x12
+        addi            t2, t1, 0xC
         # Storing the result in memory at offset 16
         sw              t2, 16(x0)
         add		t6, x0, x0
