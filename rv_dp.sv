@@ -136,15 +136,13 @@
     end else begin
         assign alu_a = aluout;
     end
-//  assign alu_a = (asel == ALUA_REG) ? a : pcc;
- if (bsel == ALUB_REG) begin
-    assign alu_b = b;    
- end else if (bsel == ALUB_IMM) begin
-    assign alu_b = imm;    
- end else begin
-    assign alu_b = 32'hffffffff;    
- end
- //  assign alu_b = (bsel == ALUB_REG) ? b : imm;    
+    if (bsel == ALUB_REG) begin
+        assign alu_b = b;    
+    end else if (bsel == ALUB_IMM) begin
+        assign alu_b = imm;    
+    end else begin
+        assign alu_b = 32'hffffffff;    
+    end
  end
 
  // For signed comparison, cast to integer. logic is by default unsigned

@@ -107,8 +107,6 @@ sm_type current,next;
             next = FETCH;
         JAL_EXEC:
             next = FETCH;
-        // ADDIX_ADD:
-        //     next = ADDIX_XOR;
         ADDIX_XOR:
             next = RTYPE_WB;
         default: // Should never reach this
@@ -193,12 +191,6 @@ sm_type current,next;
             regwen      = 1'b1;
             wbsel       = WB_PC;
         end
-        // ADDIX_ADD: begin
-        //     immsel      = IMM_I;
-        //     asel        = ALUA_REG;
-        //     bsel        = ALUB_IMM;
-        //     alusel      = ALU_ADD;
-        // end
         ADDIX_XOR: begin
             asel        = ALUA_ALUOUT;
             bsel        = ALUB_FFF;
